@@ -1,4 +1,4 @@
-# Crustacen Capital
+# Crustacean Capital
 
 Rust developer call themselves Rustacean, becuase of cRUSTacean. The unnofical mascot of the language is a crab. I want to create multi asset class analytics in Rust.
 
