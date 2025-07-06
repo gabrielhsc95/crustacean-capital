@@ -1,3 +1,5 @@
+use crate::date;
+
 use super::utils::*;
 use super::*;
 
@@ -45,4 +47,21 @@ fn leap_year() {
     assert!(!is_leap_year(2023));
     assert!(!is_leap_year(1800));
     assert!(is_leap_year(2000));
+}
+
+#[test]
+fn test_days_in_month() {
+    assert_eq!(days_in_month(1, 2024), 31);
+    assert_eq!(days_in_month(2, 2024), 29);
+    assert_eq!(days_in_month(2, 2023), 28);
+    assert_eq!(days_in_month(3, 2024), 31);
+    assert_eq!(days_in_month(4, 2024), 30);
+    assert_eq!(days_in_month(5, 2024), 31);
+    assert_eq!(days_in_month(6, 2024), 30);
+    assert_eq!(days_in_month(7, 2024), 31);
+    assert_eq!(days_in_month(8, 2024), 31);
+    assert_eq!(days_in_month(9, 2024), 30);
+    assert_eq!(days_in_month(10, 2024), 31);
+    assert_eq!(days_in_month(11, 2024), 30);
+    assert_eq!(days_in_month(12, 2024), 31);
 }

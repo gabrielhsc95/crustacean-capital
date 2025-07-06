@@ -1,5 +1,5 @@
 mod tests;
-mod utils;
+pub mod utils;
 use crate::error::{Error, Result};
 use std::cmp::Ordering;
 
@@ -42,6 +42,18 @@ impl Date {
         Ok(Date { day, month, year })
     }
 
+    pub fn day(&self) -> u8 {
+        self.day
+    }
+
+    pub fn month(&self) -> u8 {
+        self.month
+    }
+
+    pub fn year(&self) -> u16 {
+        self.year
+    }
+
     // https://en.wikipedia.org/wiki/Ordinal_date
     // same as python
     pub fn to_ordinal(&self) -> u128 {
@@ -57,10 +69,7 @@ impl Date {
         let year_contribution = 365 * adjusted_year + adjusted_year / 4 - adjusted_year / 100
             + adjusted_year / 400
             - 306;
-        println!("{adjusted_month}");
         let month_contribution = (153 * (adjusted_month - 3) + 2) / 5;
-        let day = self.day;
-        println!("{year_contribution}|{month_contribution}|{day}");
         year_contribution + month_contribution + self.day as u128
     }
 }
