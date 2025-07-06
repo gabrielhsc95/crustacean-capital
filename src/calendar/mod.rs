@@ -2,7 +2,7 @@ mod tests;
 
 use crate::date::Date;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum DaysOfTheWeek {
     Monday,
     Tuesday,
@@ -12,14 +12,14 @@ pub enum DaysOfTheWeek {
     Saturday,
     Sunday,
 }
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 // https://en.wikipedia.org/wiki/Day_count_convention
 // some DayCountConvention names start with a number,
 // so every one will start with DCC (Day Count Convention)
 pub enum DayCountConvention {
     DDCActual365,
 }
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Calendar {
     name: String,
     weekend: Vec<DaysOfTheWeek>,
@@ -53,7 +53,7 @@ impl Calendar {
         self.holidays = new_holidays;
     }
 
-    pub fn distance(&self, start: Date, end: Date) -> f64 {
+    pub fn distance(&self, start: &Date, end: &Date) -> f64 {
         match self.day_count_convention {
             DayCountConvention::DDCActual365 => {
                 (end.to_ordinal() as f64 - start.to_ordinal() as f64) / 365.0
