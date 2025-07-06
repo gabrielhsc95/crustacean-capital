@@ -5,7 +5,7 @@ use super::*;
 
 // mod.rs
 #[test]
-fn errors_in_date_creation() {
+fn test_errors_in_date_creation() {
     let invalid_day_31 = Date::new(31, 4, 2024);
     assert_eq!(invalid_day_31, Err(Error::DateInvalidDay));
 
@@ -23,7 +23,7 @@ fn errors_in_date_creation() {
 }
 
 #[test]
-fn ordinal_dates() {
+fn test_ordinal_dates() {
     let date_1 = Date::new(3, 1, 1995).unwrap();
     assert_eq!(date_1.to_ordinal(), 728296);
     let date_2 = Date::new(4, 5, 1989).unwrap();
@@ -31,7 +31,7 @@ fn ordinal_dates() {
 }
 
 #[test]
-fn comparison() {
+fn test_comparison() {
     let date_1 = Date::new(3, 1, 1995).unwrap();
     let date_2 = Date::new(4, 5, 1989).unwrap();
 
@@ -42,7 +42,7 @@ fn comparison() {
 
 // utils.rs
 #[test]
-fn leap_year() {
+fn test_leap_year() {
     assert!(is_leap_year(2024));
     assert!(!is_leap_year(2023));
     assert!(!is_leap_year(1800));

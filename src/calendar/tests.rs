@@ -14,7 +14,7 @@ fn create_test_calendar() -> Calendar {
 
 #[test]
 //test sorting at creation
-fn new_calendar() {
+fn test_new() {
     let cal = Calendar::new(
         String::from("Test"),
         Vec::new(),
@@ -34,7 +34,7 @@ fn new_calendar() {
 }
 
 #[test]
-fn add_holiday_to_calendar() {
+fn test_add_holiday() {
     let mut cal = create_test_calendar();
     cal.add_holiday(Date::new(28, 12, 2024).unwrap());
     assert_eq!(
@@ -48,10 +48,10 @@ fn add_holiday_to_calendar() {
 }
 
 #[test]
-fn distance() {
+fn test_distance() {
     let cal = create_test_calendar();
     let date_1 = Date::new(3, 1, 1995).unwrap();
     let date_2 = Date::new(4, 5, 1989).unwrap();
 
-    assert_eq!(cal.distance(date_2, date_1), 5.671232876712328)
+    assert_eq!(cal.distance(&date_2, &date_1), 5.671232876712328)
 }

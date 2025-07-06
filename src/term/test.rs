@@ -61,7 +61,7 @@ fn test_add_years() {
 }
 
 #[test]
-fn test_term_add() {
+fn test_add() {
     let term_1d = term::Term {
         value: 1,
         unit: term::TermUnit::Day,
