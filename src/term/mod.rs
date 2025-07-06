@@ -17,6 +17,12 @@ pub struct Term {
     unit: TermUnit,
 }
 
+impl Term {
+    pub fn new(value: u16, unit: TermUnit) -> Self {
+        Term { value, unit }
+    }
+}
+
 impl Add<Term> for Date {
     type Output = Date;
 
