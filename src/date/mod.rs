@@ -1,5 +1,7 @@
+pub mod generator;
 mod tests;
 pub mod utils;
+
 use crate::error::{Error, Result};
 use std::cmp::Ordering;
 

@@ -157,7 +157,12 @@ pub fn add_months(date: &Date, months: u32) -> Date {
 
     let new_month = month as u32 + months;
     month = (new_month % 12) as u8;
-    year += new_month as u16 / 12;
+    if month == 0 {
+        month = 12;
+    }
+    if new_month != 12 {
+        year += new_month as u16 / 12;
+    }
     day = cap_day(day, month, year);
     Date::new(day, month, year).expect("There is a business logic bug in add_months")
 }

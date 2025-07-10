@@ -32,18 +32,22 @@ fn test_add_months() {
     assert_eq!(new_date_2, Date::new(3, 7, 1995).unwrap());
     let new_date_2 = term::add_months(&date_1, 12);
     assert_eq!(new_date_2, Date::new(3, 1, 1996).unwrap());
-    let new_date_3 = term::add_months(&date_1, 100);
-    assert_eq!(new_date_3, Date::new(3, 5, 2003).unwrap());
+    let new_date_3 = term::add_months(&date_1, 13);
+    assert_eq!(new_date_3, Date::new(3, 2, 1996).unwrap());
+    let new_date_4 = term::add_months(&date_1, 100);
+    assert_eq!(new_date_4, Date::new(3, 5, 2003).unwrap());
+
     let date_2 = Date::new(31, 1, 2024).unwrap();
-    let new_date_4 = term::add_months(&date_2, 1);
-    assert_eq!(new_date_4, Date::new(29, 2, 2024).unwrap());
-    let new_date_5 = term::add_months(&date_2, 2);
-    assert_eq!(new_date_5, Date::new(31, 3, 2024).unwrap());
-    let new_date_6 = term::add_months(&date_2, 3);
-    assert_eq!(new_date_6, Date::new(30, 4, 2024).unwrap());
+    let new_date_5 = term::add_months(&date_2, 1);
+    assert_eq!(new_date_5, Date::new(29, 2, 2024).unwrap());
+    let new_date_6 = term::add_months(&date_2, 2);
+    assert_eq!(new_date_6, Date::new(31, 3, 2024).unwrap());
+    let new_date_7 = term::add_months(&date_2, 3);
+    assert_eq!(new_date_7, Date::new(30, 4, 2024).unwrap());
+
     let date_3 = Date::new(31, 1, 2023).unwrap();
-    let new_date_7 = term::add_months(&date_3, 1);
-    assert_eq!(new_date_7, Date::new(28, 2, 2023).unwrap());
+    let new_date_8 = term::add_months(&date_3, 1);
+    assert_eq!(new_date_8, Date::new(28, 2, 2023).unwrap());
 }
 
 #[test]
